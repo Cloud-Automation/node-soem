@@ -9,6 +9,6 @@ cd build
 cmake ..
 make
 cd ..
-cp build/libsoem.so /usr/local/lib
+#cp build/libsoem.so /usr/local/lib
 cd ..
 
