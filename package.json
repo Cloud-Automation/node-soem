@@ -1,0 +1,24 @@
+{
+  "name": "node-soem",
+  "version": "0.1.0",
+  "description": "Simple Open EtherCAT Master for Node.JS.",
+  "main": "build/Release/node-soem",
+  "dependencies": {
+    "nan": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "keywords": [
+    "ethercat",
+    "soem",
+    "automation",
+    "bus",
+    "protocol"
+  ],
+  "author": "Stefan Pöter [stefan.poeter@cloud-automation.de]",
+  "license": "MIT",
+  "gypfile": true
+}
