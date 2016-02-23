@@ -84,9 +84,6 @@ class NodeSoemMaster : public Nan::ObjectWrap {
 
             NodeSoemMaster* obj = ObjectWrap::Unwrap<NodeSoemMaster>(info.Holder());
 
-            printf("%s\n", "init function");
-            printf("%s\n", obj->ifname_);
-
             int retVal = ec_init(obj->ifname_);
         
             info.GetReturnValue().Set(Number::New(isolate, retVal));
