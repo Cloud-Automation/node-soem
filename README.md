@@ -54,7 +54,7 @@ Basically following the C API.
                 
                 // operational state reached
                 if (state === 4) {
-                    clearInterval(setupInt);
+                    clearInterval(intv);
                     loop();    
                 } 
                 
