@@ -204,9 +204,9 @@ class NodeSoemMaster : public Nan::ObjectWrap {
 
             Local<Array> arr = Array::New(isolate);
 
-            int i = 0;
+            int i = 1;
 
-            while (i < ec_slavecount) {
+            while (i <= ec_slavecount) {
             
                 Local<Object> slave = Object::New(isolate);
 
@@ -228,7 +228,7 @@ class NodeSoemMaster : public Nan::ObjectWrap {
 
                 slave->Set(String::NewFromUtf8(isolate, "pdelay"), Uint32::New(isolate, ec_slave[i].pdelay));
 
-                arr->Set(i, slave);
+                arr->Set(i-1, slave);
 
                 i++;
             
