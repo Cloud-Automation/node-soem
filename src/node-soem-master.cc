@@ -3,6 +3,7 @@
 #include <node.h>
 #include <nan.h>
 
+#include <stdlib.h>
 #include <string>
 #include "ethercat.h"
 
@@ -51,14 +52,20 @@ class NodeSoemMaster : public Nan::ObjectWrap {
             if (info.IsConstructCall()) {
                 // invoke as constructor: 'new NodeSoemMaster(...)'
                 // get interface name from arguments
-                
-                char *ifname;
+
+
+                char *ifname = (char*) calloc(1, 20);
 
                 if (info[0]->IsUndefined() || !info[0]->IsString()) {
+
                     ifname = (char *) "eth0";
+
                 } else {
+
                     String::Utf8Value str(info[0]->ToString());
-                    ifname = *str;
+
+                    strcpy(ifname, (char*) *str);
+
                 }
 
                 NodeSoemMaster* obj = new NodeSoemMaster(ifname);
@@ -77,6 +84,7 @@ class NodeSoemMaster : public Nan::ObjectWrap {
 
             }
                 
+
         }        
         
         static NAN_METHOD(init) {
