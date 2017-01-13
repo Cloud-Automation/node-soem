@@ -1,5 +1,5 @@
 var soem = require('../build/Release/node-soem');
-    master = soem.NodeSoemMaster();
+    master = soem.NodeSoemMaster("enp0s0");
         
 console.log('Initiating.', master.getInterfaceName());
 
@@ -10,7 +10,6 @@ console.log(master.configMap(), 'config map completed.');
 console.log(master.configDC(), 'configuring dc.');
 
 console.log(master.getSlaves());
-
 
 
 console.log('Sending initial data.');
