@@ -27,7 +27,7 @@ class NodeSoemMaster : public Nan::ObjectWrap {
             SetPrototypeMethod(tpl, "receiveProcessdata", receiveProcessdata);
 
             SetPrototypeMethod(tpl, "writeState", writeState);
-            SetPrototypeMethod(tpl, "readState", statecheck);
+            SetPrototypeMethod(tpl, "readState", readState);
             SetPrototypeMethod(tpl, "statecheck", statecheck);
 
             SetPrototypeMethod(tpl, "getSlaves", getSlaves);
