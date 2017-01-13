@@ -54,8 +54,6 @@ class NodeSoemMaster : public Nan::ObjectWrap {
                 // invoke as constructor: 'new NodeSoemMaster(...)'
                 // get interface name from arguments
 
-                char *ifname;
-
                 char *ifname = (char*) calloc(1, 20);
 
                 if (info[0]->IsUndefined() || !info[0]->IsString()) {
