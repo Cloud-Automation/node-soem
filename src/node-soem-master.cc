@@ -54,12 +54,9 @@ class NodeSoemMaster : public Nan::ObjectWrap {
                 // invoke as constructor: 'new NodeSoemMaster(...)'
                 // get interface name from arguments
 
-<<<<<<< HEAD
                 char *ifname;
-=======
 
                 char *ifname = (char*) calloc(1, 20);
->>>>>>> e0cab079b39ac168a922ab689bd919985927abd5
 
                 if (info[0]->IsUndefined() || !info[0]->IsString()) {
 
@@ -88,16 +85,9 @@ class NodeSoemMaster : public Nan::ObjectWrap {
                 info.GetReturnValue().Set(cons->NewInstance(argc, argv));
 
             }
-<<<<<<< HEAD
 
         }
 
-=======
-                
-
-        }        
-        
->>>>>>> e0cab079b39ac168a922ab689bd919985927abd5
         static NAN_METHOD(init) {
             Isolate* isolate = info.GetIsolate();
 
