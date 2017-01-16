@@ -1,6 +1,6 @@
 {
   "name": "node-soem",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple Open EtherCAT Master for Node.JS.",
   "main": "build/Release/node-soem",
   "dependencies": {
