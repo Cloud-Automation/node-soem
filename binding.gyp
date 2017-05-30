@@ -12,11 +12,8 @@
                 "lib/oshw/linux", 
                 "<!(node -e \"require('nan')\")" 
             ],
-            "ldflags" : [
-                "-Wl,-rpath,lib/build"
-            ],
             "libraries" : [ 
-                "-lsoem" 
+                "../lib/build/libsoem.a" 
             ]
         }
     ]
