@@ -233,15 +233,23 @@ class NodeSoemMaster : public Nan::ObjectWrap {
                 slave->Set(String::NewFromUtf8(isolate, "configadr"), Number::New(isolate, ec_slave[i].configadr));
                 slave->Set(String::NewFromUtf8(isolate, "aliasadr"), Number::New(isolate, ec_slave[i].aliasadr));
 
+                int numbytes = ec_slave[i].Obytes;
+                if ((numbytes == 0) && (ec_slave[i].Obits > 0)) numbytes = 1;
+                if (numbytes > 8) numbytes = 8;
+
                 slave->Set(String::NewFromUtf8(isolate, "Obits"), Uint32::New(isolate, ec_slave[i].Obits));
                 slave->Set(String::NewFromUtf8(isolate, "Obytes"), Uint32::New(isolate, ec_slave[i].Obytes));
                 slave->Set(String::NewFromUtf8(isolate, "outputs"),
-                        ArrayBuffer::New(isolate, (void*) ec_slave[i].outputs, ec_slave[i].Obytes));
+                        ArrayBuffer::New(isolate, (void*) ec_slave[i].outputs, numbytes));
+
+                numbytes = ec_slave[i].Ibytes;
+                if ((numbytes == 0) && (ec_slave[i].Ibits > 0)) numbytes = 1;
+                if (numbytes > 8) numbytes = 8;
 
                 slave->Set(String::NewFromUtf8(isolate, "Ibits"), Uint32::New(isolate, ec_slave[i].Ibits));
                 slave->Set(String::NewFromUtf8(isolate, "Ibytes"), Uint32::New(isolate, ec_slave[i].Ibytes));
                 slave->Set(String::NewFromUtf8(isolate, "inputs"),
-                        ArrayBuffer::New(isolate, (void*) ec_slave[i].inputs, ec_slave[i].Ibytes));
+                        ArrayBuffer::New(isolate, (void*) ec_slave[i].inputs, numbytes));
 
                 slave->Set(String::NewFromUtf8(isolate, "pdelay"), Uint32::New(isolate, ec_slave[i].pdelay));
 
